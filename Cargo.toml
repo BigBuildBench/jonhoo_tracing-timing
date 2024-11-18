@@ -1,0 +1,34 @@
+[package]
+name = "tracing-timing"
+version = "0.6.0"
+edition = "2018"
+authors = ["Jon Gjengset <jon@thesquareplanet.com>"]
+
+license = "MIT"
+
+readme = "README.md"
+description = "Inter-event timing metrics on top of tracing."
+repository = "https://github.com/jonhoo/tracing-timing.git"
+
+keywords = ["perf", "tracing", "profiling"]
+categories = ["development-tools::profiling", "visualization"]
+
+[badges]
+azure-devops = { project = "jonhoo/jonhoo", pipeline = "tracing-timing", build = "13" }
+cirrus-ci = { repository = "jonhoo/tracing-timing" }
+codecov = { repository = "jonhoo/tracing-timing", branch = "master", service = "github" }
+maintenance = { status = "experimental" }
+
+[features]
+layer = ["tracing-subscriber"]
+default = ["layer"]
+
+[dependencies]
+
+[dev-dependencies]
+tracing = "0.1.2"
+rand = "0.8"
+rand_distr = "0.4"
+
+[profile.release]
+debug = true
